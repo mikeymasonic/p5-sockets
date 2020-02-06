@@ -6,7 +6,8 @@ function setup() {
   background(0);
   // Start a socket connection to the server
   // Some day we would run this server somewhere else
-  socket = io.connect('https://socket-hack.herokuapp.com/');
+  // socket = io.connect('https://socket-hack.herokuapp.com/');
+  socket = io.connect('https://victestappz.herokuapp.com/');
   // We make a named event called 'mouse' and write an
   // anonymous callback function
   socket.on('mouse',
@@ -14,9 +15,9 @@ function setup() {
     function(data) {
       console.log("Got: " + data.x + " " + data.y);
       // Draw a blue circle
-      fill(0,0,random(255));
+      fill(random(255),0,0);
       noStroke();
-      ellipse(data.x,data.y,10,10);
+      ellipse(data.x,data.y,5,5);
     }
   );
 }
@@ -30,7 +31,7 @@ function mouseDragged() {
   fill(0,random(255),random(255));
 
   noStroke();
-  ellipse(mouseX,mouseY,10,10);
+  ellipse(mouseX,mouseY,5,5);
   // Send the mouse coordinates
   sendmouse(mouseX,mouseY);
 }
