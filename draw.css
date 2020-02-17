@@ -4,6 +4,8 @@ body {
     background-size: 100% auto; */
     background-color: black;
     position: relative;
+    color:white;
+    font-family: monospace;
 }
 
 
